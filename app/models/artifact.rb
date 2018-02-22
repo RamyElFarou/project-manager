@@ -14,8 +14,8 @@ class Artifact < ActiveRecord::Base
   
   def upload_to_s3
     s3 = Aws::S3::Resource.new(
-      access_key_id: 'AKIAJIAQ2EAPOUJAPX6Q',
-      secret_access_key: '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'
+      access_key_id: 'AKIAJQQD4DISEBLJ4B6Q',
+      secret_access_key: 'AKIAJQQD4DISEBLJ4B6Q'
     )
     tenant_name = Tenant.find(Thread.current[:tenant_id]).name
     obj = s3.bucket(ENV['S3_BUCKET']).object("#{tenant_name}/#{upload.original_filename}")
